@@ -56,10 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Asset Packages\uchwch\Toon\Editor\RemoveUnusedMaterialProperties.cs" />
     <Compile Include="Assets\Asset Packages\uchwch\Toon\Editor\CopyMaterialParameter.cs" />
     <Compile Include="Assets\Asset Packages\uchwch\Toon\Editor\UTS2GUI.cs" />
     <Compile Include="Assets\Asset Packages\uchwch\Toon\Editor\RemoveUnusedShaderKeywordsFromUTS2Material.cs" />
-    <Compile Include="Assets\Asset Packages\uchwch\Toon\Editor\RemoveUnusedMaterialProperties.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -694,6 +694,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{B3ADFE85-F464-CCBC-5579-124D3FB1602D}</Project>
+      <Name>Assembly-CSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
