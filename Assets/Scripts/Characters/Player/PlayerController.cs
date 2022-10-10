@@ -1,32 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    //Animator animator;
 
-    //private void Awake()
-    //{
-    //    animator = GetComponentInChildren<Animator>();
+    PlayerInput input;
 
+    Rigidbody rigidBody;
 
-    //}
+    private void Awake()
+    {
+        input = GetComponent<PlayerInput>();
+        rigidBody = GetComponent<Rigidbody>();
+    }
 
-    //private void Update()
-    //{
-    //    //如果按住当前键盘的A键或者D键
-    //    //if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-    //    if (Keyboard.current.aKey.isPressed || Keyboard.current.dKey.isPressed)
-    //    {
-    //        animator.Play("Run");
-    //    }
-    //    else
-    //    {
-    //        animator.Play("Idle");
-    //    }
-    //}
+    private void Start()
+    {
+        input.EnableGamePlayInputs();
+    }
 
+    public void Move(float speed)
+    {
+        if (input.Move)
+        {
+            transform.localScale = new Vector3(input.AxisX, 1f, 1f);
+        }
+        SetVelocityX(speed * input.AxisX);
+    }
+
+    public void SetVelocity(Vector3 velocity)
+    {
+        rigidBody.velocity = velocity;
+    }
+
+    public void SetVelocityX(float velocityX)
+    {
+        rigidBody.velocity = new Vector3(velocityX, rigidBody.velocity.y);
+    }
+
+    public void SetVelocityY(float velocityY)
+    {
+        rigidBody.velocity = new Vector3(rigidBody.velocity.x, velocityY);
+
+    }
 
 }

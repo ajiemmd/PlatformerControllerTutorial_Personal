@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerState : ScriptableObject,IState
 {
     protected Animator animator;
+    protected PlayerController player;
+    protected PlayerInput input;
     protected PlayerStateMachine stateMachine;
 
-    public void Initialize(Animator animator, PlayerStateMachine stateMachine)
+    public void Initialize(Animator animator,PlayerController playerController,PlayerInput playerInput, PlayerStateMachine stateMachine)
     {
         this.animator = animator;
+        this.player = playerController;
+        this.input = playerInput;
         this.stateMachine = stateMachine;
     }
 

@@ -56,13 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\State Machine System\Base\IState.cs" />
-    <Compile Include="Assets\Scripts\State Machine System\Base\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState.cs" />
-    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Characters\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Idle.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Run.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Base\IState.cs" />
+    <Compile Include="Assets\Scripts\Input\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerStateMachine.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Base\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\Input\PlayerInputActions.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packages\uchwch\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
