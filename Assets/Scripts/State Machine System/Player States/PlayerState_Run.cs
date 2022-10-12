@@ -4,10 +4,13 @@ using UnityEngine;
 public class PlayerState_Run : PlayerState
 {
     [SerializeField]float runSpeed = 5f;
+    [SerializeField] float acceleration = 5f;
 
     public override void Enter()
     {
         animator.Play("Run");
+
+        currentSpeed = player.MoveSpeed;
     }
 
     public override void LogicUpdate()
@@ -17,10 +20,14 @@ public class PlayerState_Run : PlayerState
         {
             stateMachine.SwitchState(typeof(PlayerState_Idle));
         }
+
+        currentSpeed = Mathf.MoveTowards(currentSpeed, runSpeed, acceleration * Time.deltaTime);
     }
 
     public override void PhysicUpdate()
     {
-        player.Move(runSpeed);
+        player.Move(currentSpeed);
+
+
     }
 }
