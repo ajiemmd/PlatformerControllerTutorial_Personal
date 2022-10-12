@@ -10,12 +10,15 @@ public class PlayerState_JumpUp : PlayerState
 
     [SerializeField] float moveSpeed = 5f;
 
+    [SerializeField] ParticleSystem jumpVFX;
+
 
     public override void Enter()
     {
         base.Enter();
 
         player.SetVelocityY(jumpForce);
+        Instantiate(jumpVFX, player.transform.position, Quaternion.identity);
     }
 
     public override void LogicUpdate()
