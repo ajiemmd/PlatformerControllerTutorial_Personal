@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    PlayerGroundDetector groundDetector;
 
     PlayerInput input;
 
     Rigidbody rigidBody;
 
+    public bool IsGrounded => groundDetector.IsGrounded;
+
+    public bool IsFalling => rigidBody.velocity.y < 0 && !IsGrounded;
+
     public float MoveSpeed => Mathf.Abs(rigidBody.velocity.x);
 
     private void Awake()
     {
+        groundDetector = GetComponentInChildren<PlayerGroundDetector>();
         input = GetComponent<PlayerInput>();
         rigidBody = GetComponent<Rigidbody>();
     }

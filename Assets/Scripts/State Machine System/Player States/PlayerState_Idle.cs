@@ -7,7 +7,7 @@ public class PlayerState_Idle : PlayerState
 
     public override void Enter()
     {
-        animator.Play("Idle");
+        base.Enter();
 
         currentSpeed = player.MoveSpeed;
         //player.SetVelocityX(0f);
@@ -21,13 +21,23 @@ public class PlayerState_Idle : PlayerState
             stateMachine.SwitchState(typeof(PlayerState_Run));
         }
 
+        if (input.Jump)
+        {
+            stateMachine.SwitchState(typeof(PlayerState_JumpUp));
+        }
+
+        if (!player.IsGrounded)
+        {
+            stateMachine.SwitchState(typeof(PlayerState_Fall));
+        }
+
         currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, deceleration * Time.deltaTime);
 
     }
 
     public override void PhysicUpdate()
     {
-        player.SetVelocityX(currentSpeed * player.transform.localScale.x);
+        player.SetVelocityX(currentSpeed *  player.transform.localScale.x);
     }
 
 }

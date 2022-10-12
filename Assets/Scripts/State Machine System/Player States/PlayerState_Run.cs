@@ -8,7 +8,7 @@ public class PlayerState_Run : PlayerState
 
     public override void Enter()
     {
-        animator.Play("Run");
+        base.Enter();
 
         currentSpeed = player.MoveSpeed;
     }
@@ -19,6 +19,16 @@ public class PlayerState_Run : PlayerState
         if (!input.Move)
         {
             stateMachine.SwitchState(typeof(PlayerState_Idle));
+        }
+
+        if (input.Jump)
+        {
+            stateMachine.SwitchState(typeof(PlayerState_JumpUp));
+        }
+
+        if (!player.IsGrounded)
+        {
+            stateMachine.SwitchState(typeof(PlayerState_Fall));
         }
 
         currentSpeed = Mathf.MoveTowards(currentSpeed, runSpeed, acceleration * Time.deltaTime);

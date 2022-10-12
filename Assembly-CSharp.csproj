@@ -65,6 +65,10 @@
     <Compile Include="Assets\Scripts\Input\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Fall.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_JumpUp.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Land.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\PlayerGroundDetector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packages\uchwch\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />
