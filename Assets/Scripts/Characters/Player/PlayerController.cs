@@ -53,4 +53,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void SetUseGravity(bool value)
+    {
+        rigidBody.useGravity = value;
+    }
+
 }
