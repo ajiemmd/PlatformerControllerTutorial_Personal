@@ -24,11 +24,15 @@ public class PlayerState_Fall : PlayerState
 
         if (input.Jump)
         {
-            //Switch to Air Jump State
             if (player.CanAirJump)
             {
                 stateMachine.SwitchState(typeof(PlayerState_AirJump));
+
+                return;
             }
+
+            input.SetJumpInputBufferTimer();
+
         }
     }
 
