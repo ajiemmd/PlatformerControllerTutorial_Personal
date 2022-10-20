@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/StateMachine/PlayerState/Fall", fileName = "PlayerState_Fall")]
-
 public class PlayerState_Fall : PlayerState
 {
     [SerializeField] AnimationCurve speedCurve;

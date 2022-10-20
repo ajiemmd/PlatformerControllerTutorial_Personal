@@ -12,6 +12,8 @@ public class PlayerState_JumpUp : PlayerState
 
     [SerializeField] ParticleSystem jumpVFX;
 
+    [SerializeField] AudioClip jumpSFX;
+
 
     public override void Enter()
     {
@@ -19,6 +21,7 @@ public class PlayerState_JumpUp : PlayerState
 
         input.HasJumpInputBuffer = false;
         player.SetVelocityY(jumpForce);
+        player.VoicePlayer.PlayOneShot(jumpSFX);
         Instantiate(jumpVFX, player.transform.position, Quaternion.identity);
     }
 

@@ -10,12 +10,15 @@ public class PlayerState_AirJump : PlayerState
 
     [SerializeField] ParticleSystem jumpVFX;
 
+    [SerializeField] AudioClip jumpSFX;
+
     public override void Enter()
     {
         base.Enter();
 
         player.CanAirJump = false;
         player.SetVelocityY(jumpForce);
+        player.VoicePlayer.PlayOneShot(jumpSFX);
         Instantiate(jumpVFX, player.transform.position, Quaternion.identity);
     }
 

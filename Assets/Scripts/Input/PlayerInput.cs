@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -36,21 +37,26 @@ public class PlayerInput : MonoBehaviour
         };
     }
 
-    private void OnGUI()
-    {
-        Rect rect = new Rect(200, 200, 200, 200);
-        string message = "Has Jump Input Buffer" + HasJumpInputBuffer;
-        GUIStyle style = new GUIStyle();
+    //private void OnGUI()
+    //{
+    //    Rect rect = new Rect(200, 200, 200, 200);
+    //    string message = "Has Jump Input Buffer" + HasJumpInputBuffer;
+    //    GUIStyle style = new GUIStyle();
 
-        style.fontSize = 20;
-        style.fontStyle = FontStyle.Bold;
-        GUI.Label(rect, message, style);
-    }
+    //    style.fontSize = 20;
+    //    style.fontStyle = FontStyle.Bold;
+    //    GUI.Label(rect, message, style);
+    //}
 
     public void EnableGamePlayInputs()
     {
         playerInputActions.GamePlay.Enable();
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void DisableGamePlayInputs()
+    {
+        playerInputActions.GamePlay.Disable();
     }
 
     public void SetJumpInputBufferTimer()

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateName: Land
   transitionDuration: 0.1
+  stiffTime: 0.2
+  landVFX: {fileID: 4677385770777475979, guid: 31beca5807f326246860109c534f1383, type: 3}

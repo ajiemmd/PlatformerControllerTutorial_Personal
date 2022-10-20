@@ -56,23 +56,40 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Utilities\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\UI\ReadyScreen.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PlayerGroundDetector.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Idle.cs" />
+    <Compile Include="Assets\Scripts\Platform\VictoryGem.cs" />
     <Compile Include="Assets\Scripts\Utilities\AutoRotate.cs" />
+    <Compile Include="Assets\Scripts\Audio\SoundEffectPlayer.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Run.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Base\IState.cs" />
     <Compile Include="Assets\Scripts\Input\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_JumpUp.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Platform\Spike.cs" />
+    <Compile Include="Assets\Scripts\EventChannels\VoidEventChannel.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Base\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Input\PlayerInputActions.cs" />
+    <Compile Include="Assets\Scripts\UI\DefeatScreen.cs" />
+    <Compile Include="Assets\Scripts\Platform\Gate.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Float.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_CoyoteTime.cs" />
+    <Compile Include="Assets\Scripts\Platform\GateTrigger.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Fall.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Defeated.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState.cs" />
+    <Compile Include="Assets\Scripts\UI\VictoryScreen.cs" />
     <Compile Include="Assets\Scripts\Platform\StarGem.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_AirJump.cs" />
     <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Land.cs" />
-    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_CoyoteTime.cs" />
+    <Compile Include="Assets\Scripts\State Machine System\Player States\PlayerState_Victory.cs" />
+    <Compile Include="Assets\Scripts\UI\ClearTimer.cs" />
+    <Compile Include="Assets\Scripts\EventChannels\OneParameterEventChannel.cs" />
+    <Compile Include="Assets\Scripts\EventChannels\StringEventChannel.cs" />
+    <Compile Include="Assets\Scripts\Platform\BlackBall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packages\uchwch\Toon\Shader\Toon_DoubleShadeWithFeather_Mobile_TransClipping_StencilMask.shader" />

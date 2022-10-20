@@ -1,13 +1,19 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] VoidEventChannel levelClearedEventChannel;
+
     PlayerGroundDetector groundDetector;
 
     PlayerInput input;
 
     Rigidbody rigidBody;
 
+    public AudioSource VoicePlayer { get; private set; }
+
+    public bool Victory { get; private set; }
     public bool CanAirJump { get; set; }
 
     public bool IsGrounded => groundDetector.IsGrounded;
@@ -21,11 +27,38 @@ public class PlayerController : MonoBehaviour
         groundDetector = GetComponentInChildren<PlayerGroundDetector>();
         input = GetComponent<PlayerInput>();
         rigidBody = GetComponent<Rigidbody>();
+        VoicePlayer = GetComponentInChildren<AudioSource>();
+    }
+
+    private void OnEnable()
+    {
+        levelClearedEventChannel.AddListener(OnLevelCleared);
+    }
+
+    void OnLevelCleared()
+    {
+        Victory = true;
+    }
+
+    internal void OnDefeated()
+    {
+        input.DisableGamePlayInputs();
+
+        rigidBody.velocity = Vector3.zero;
+        rigidBody.useGravity = false;
+        rigidBody.detectCollisions = false;
+
+        GetComponent<StateMachine>().SwitchState(typeof(PlayerState_Defeated));
     }
 
     private void Start()
     {
         input.EnableGamePlayInputs();
+    }
+
+    private void OnDisable()
+    {
+        levelClearedEventChannel.RemoveListener(OnLevelCleared);
     }
 
     public void Move(float speed)
