@@ -1,8 +1,62 @@
-.vs
-Library
-Logs
-obj
-Temp
+# Unity 生成目录
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# MemoryCaptures / Recordings 体积可能很大
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Asset Store 工具
+/[Aa]ssets/AssetStoreTools*
+
+# Visual Studio 缓存目录
+.vs/
 .vsconfig
-Platformer Controller Tutorial.sln
-Platformer Controller Tutorial Initial.unitypackage
+
+# Gradle 缓存目录
+.gradle/
+
+# 自动生成的 VS/Rider/Consulo 解决方案和工程文件
+ExportedObj/
+.unityproj/
+*.csproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity 生成的 meta 文件
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity 崩溃报告
+sysinfo.txt
+
+# 构建产物
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Crashlytics 生成文件
+crashlytics-build.properties
+
+# Addressables 打包数据
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Android 导入的临时资源
+/[Aa]ssets/[Aa]ssetsImported*
